@@ -27,6 +27,7 @@ struct SearchView_Previews: PreviewProvider {
 }
 
 struct SearchBar: View {
+    @State var networkManager = NetworkManager()
     @Binding var text: String
     @State private var isEditing = false // Add this state property
 
@@ -35,6 +36,12 @@ struct SearchBar: View {
             TextField("Search", text: $text, onEditingChanged: { editing in
                 withAnimation {
                     self.isEditing = editing
+                }
+            }, onCommit: {
+                            // Call the fetchGame() function with the entered text
+                networkManager.fetchGame(gameTitle: text) {
+                    print("Data is Ready")
+                    // Print it into List -> Set bool to true
                 }
             })
             .padding(7)
