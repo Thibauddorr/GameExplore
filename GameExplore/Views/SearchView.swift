@@ -6,11 +6,9 @@ struct SearchView: View {
     
     var body: some View {
         VStack{
-            SearchBar(text: $searchText, searchResultGames: $searchResultGames) // Pass as @State
+            SearchBar(text: $searchText, searchResultGames: $searchResultGames)
             Spacer()
-            List(searchResultGames, id: \.name) { game in
-                Text(game.name)
-            }
+            SearchResult(searchResultGames: $searchResultGames)
         }
         .padding()
     }
@@ -22,6 +20,17 @@ struct SearchView_Previews: PreviewProvider {
     }
 }
 
+struct SearchResult: View{
+    @Binding var searchResultGames: [Game]
+    var body: some View {
+        HStack {
+            List(searchResultGames, id: \.name) { game in
+                Text(game.name)
+            }
+        }
+    }
+}
+
 struct SearchBar: View {
     @State var networkManager = NetworkManager()
     @Binding var text: String
@@ -30,7 +39,7 @@ struct SearchBar: View {
 
     var body: some View {
         HStack {
-            TextField("Search", text: $text, onEditingChanged: { editing in
+            TextField("Search a game title", text: $text, onEditingChanged: { editing in
                 withAnimation {
                     self.isEditing = editing
                 }
