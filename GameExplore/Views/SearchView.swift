@@ -1,20 +1,16 @@
-//
-//  SearchView.swift
-//  GameExplore
-//
-//  Created by Thibaud DORR on 14/09/2023.
-//
-
 import SwiftUI
 
 struct SearchView: View {
     @State private var searchText = ""
+    @State var searchResultGames: [Game] = []
     
     var body: some View {
         VStack{
-            SearchBar(text: $searchText)
+            SearchBar(text: $searchText, searchResultGames: $searchResultGames) // Pass as @State
             Spacer()
-                
+            List(searchResultGames, id: \.name) { game in
+                Text(game.name)
+            }
         }
         .padding()
     }
@@ -29,7 +25,8 @@ struct SearchView_Previews: PreviewProvider {
 struct SearchBar: View {
     @State var networkManager = NetworkManager()
     @Binding var text: String
-    @State private var isEditing = false // Add this state property
+    @State private var isEditing = false
+    @Binding var searchResultGames: [Game] // Pass as @State
 
     var body: some View {
         HStack {
@@ -38,10 +35,9 @@ struct SearchBar: View {
                     self.isEditing = editing
                 }
             }, onCommit: {
-                            // Call the fetchGame() function with the entered text
-                networkManager.fetchGame(gameTitle: text) {
+                networkManager.fetchGame(gameTitle: text) { games in
                     print("Data is Ready")
-                    // Print it into List -> Set bool to true
+                    self.searchResultGames = games // Update the search result games within SearchBar
                 }
             })
             .padding(7)
