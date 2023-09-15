@@ -7,6 +7,25 @@
 
 import Foundation
 
+let defaultGame = Game(
+    slug: nil,
+    name: "None",
+    playtime: nil,
+    platforms: nil,
+    stores: nil,
+    released: nil,
+    tba: nil,
+    background_image: nil,
+    rating: nil,
+    rating_top: nil,
+    ratings: nil,
+    ratings_count: nil,
+    reviews_text_count: nil,
+    added: nil,
+    metacritic: nil,
+    score: ""
+)
+
 struct GameResponse: Decodable {
     let count: Int
     let next: String?

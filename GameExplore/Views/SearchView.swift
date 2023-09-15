@@ -7,7 +7,6 @@ struct SearchView: View {
     var body: some View {
         VStack{
             SearchBar(text: $searchText, searchResultGames: $searchResultGames)
-            Spacer()
             SearchResult(searchResultGames: $searchResultGames)
         }
         .padding()
@@ -20,15 +19,35 @@ struct SearchView_Previews: PreviewProvider {
     }
 }
 
-struct SearchResult: View{
+struct SearchResult: View {
     @Binding var searchResultGames: [Game]
-    var body: some View {
-        HStack {
-            List(searchResultGames, id: \.name) { game in
-                Text(game.name)
+
+//    var body: some View {
+//        NavigationView { // Wrap the list in a NavigationView
+//            List(searchResultGames, id: \.name) { game in
+//               // NavigationLink(destination: GameDetailsView(gameData: game)) {
+//                NavigationLink(destination: GameDetailsView(gameData: game)) {
+//                    Text(game.name)
+//                }
+//            }
+//        }
+//    }
+    
+        var body: some View {
+            NavigationView { // Wrap the list in a NavigationView
+                ScrollView {
+                    LazyVGrid(columns: [GridItem(.flexible(minimum: 80))]) {
+                        ForEach(searchResultGames, id: \.name) { game in
+                            NavigationLink(destination: GameDetailsView(gameData: game)) {
+                                GameTitleView(game: game)
+                            }
+                        }
+                    }
+                }
+//                .navigationTitle("Search Results")
             }
         }
-    }
+
 }
 
 struct SearchBar: View {
