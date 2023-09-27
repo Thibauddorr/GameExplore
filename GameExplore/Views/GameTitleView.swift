@@ -11,19 +11,47 @@ struct GameTitleView: View {
     let game: Game
     
     var body: some View {
-        HStack(alignment: .top) {
-            Image(systemName: "gamecontroller")
-                .resizable()
-                .frame(width: 45, height: 35)
-            Text(game.name)
-                .font(.title2)
-                .fontWeight(.semibold)
-                .foregroundColor(Color(.label))
-                .scaledToFit()
-                .minimumScaleFactor(0.6)
+        VStack(alignment: .leading) {
+            HStack(spacing: 10) {
+                if let background_image = game.background_image {
+                    AsyncImage(url: URL(string: background_image)) { image in
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 80, height: 80)
+                            .cornerRadius(8)
+                    } placeholder: {
+                        Image(systemName: "gamecontroller")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 80, height: 80)
+                            .cornerRadius(8)
+                    }
+                } else {
+                    Image(systemName: "gamecontroller")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 80, height: 80)
+                        .cornerRadius(8)
+                }
+            }
+            .alignmentGuide(.top) { _ in
+                    // This ensures that the images are aligned at the top
+                    0
+            }
         }
-        .padding()
-        .alignmentGuide(.leading) { _ in 0 } // Align the content to the left
+        .frame(height: 80)
+        
+        VStack(alignment: .leading, spacing: 10){
+            HStack(spacing: 10) {
+                Text(game.name)
+                    .font(.title2)
+                    .fontWeight(.semibold)
+                    .foregroundColor(Color(.label))
+                    .scaledToFit()
+                    .minimumScaleFactor(0.6)
+            }
+        }
     }
 }
 
