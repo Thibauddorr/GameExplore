@@ -17,7 +17,35 @@ struct GameDetailsView: View {
                 .font(.body)
                 .padding()
             
+            
+            VStack(alignment: .leading, spacing: 20) {
+                if let background_image = gameData.background_image {
+                    AsyncImage(url: URL(string: background_image)) { image in
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 200, height: 200)
+                            .cornerRadius(8)
+                    } placeholder: {
+                        Image(systemName: "gamecontroller")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 200, height: 200)
+                            .cornerRadius(8)
+                    }
+                } else {
+                    Image(systemName: "gamecontroller")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 200, height: 200)
+                        .cornerRadius(8)
+                }
+                
+            }
+            .padding()
+            .frame(width: 30)
             Spacer()
+            
             
             Button {
                 //isShowingSafariView = true

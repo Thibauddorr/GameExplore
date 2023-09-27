@@ -11,8 +11,9 @@ struct GameTitleView: View {
     let game: Game
     
     var body: some View {
-        VStack(alignment: .leading) {
-            HStack(spacing: 10) {
+        HStack(spacing: 10) {
+            Spacer()
+            VStack(alignment: .leading, spacing: 10) {
                 if let background_image = game.background_image {
                     AsyncImage(url: URL(string: background_image)) { image in
                         image
@@ -34,23 +35,26 @@ struct GameTitleView: View {
                         .frame(width: 80, height: 80)
                         .cornerRadius(8)
                 }
+                
             }
-            .alignmentGuide(.top) { _ in
-                    // This ensures that the images are aligned at the top
-                    0
+            .padding()
+            .frame(width: 30)
+            Spacer()
+           
+            VStack(alignment: .leading, spacing: 10){
+                HStack(spacing: 10) {
+                    Text(game.name)
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                        .foregroundColor(Color(.label))
+                        .scaledToFit()
+                        .minimumScaleFactor(0.3)
+                    
+                }
             }
-        }
-        .frame(height: 80)
-        
-        VStack(alignment: .leading, spacing: 10){
-            HStack(spacing: 10) {
-                Text(game.name)
-                    .font(.title2)
-                    .fontWeight(.semibold)
-                    .foregroundColor(Color(.label))
-                    .scaledToFit()
-                    .minimumScaleFactor(0.6)
-            }
+            .padding()
+            .frame(width: 220)
+            Spacer()
         }
     }
 }
