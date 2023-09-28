@@ -11,49 +11,50 @@ struct GameTitleView: View {
     let game: Game
     
     var body: some View {
-        HStack(spacing: 10) {
-            Spacer()
-            VStack(alignment: .leading, spacing: 10) {
+        HStack(spacing: 2) {
+            //Spacer()
+            VStack(alignment: .leading, spacing: 3) {
                 if let background_image = game.background_image {
                     AsyncImage(url: URL(string: background_image)) { image in
                         image
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 80, height: 80)
-                            .cornerRadius(8)
+                            .frame(width: 50, height: 50)
+                            //.cornerRadius(25)
+                            .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
                     } placeholder: {
                         Image(systemName: "gamecontroller")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 80, height: 80)
-                            .cornerRadius(8)
+                            .frame(width: 50, height: 50)
+                            //.cornerRadius(50/2)
+                            .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
                     }
                 } else {
                     Image(systemName: "gamecontroller")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 80, height: 80)
-                        .cornerRadius(8)
+                        .frame(width: 50, height: 50)
+                        //.cornerRadius(25)
+                        .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
                 }
                 
             }
             .padding()
-            .frame(width: 30)
-            Spacer()
            
-            VStack(alignment: .leading, spacing: 10){
-                HStack(spacing: 10) {
+            VStack(alignment: .leading){
+                HStack(alignment: .top) {
                     Text(game.name)
-                        .font(.title2)
+                        .font(.headline)
                         .fontWeight(.semibold)
                         .foregroundColor(Color(.label))
-                        .scaledToFit()
+                        //.scaledToFit()
                         .minimumScaleFactor(0.3)
+                        Spacer()
                     
                 }
             }
-            .padding()
-            .frame(width: 220)
+            //.padding()
             Spacer()
         }
     }

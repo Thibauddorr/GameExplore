@@ -9,7 +9,7 @@ import Foundation
 
 let defaultGame = Game(
     slug: nil,
-    name: "None",
+    name: "None name for this game yet this is only test",
     playtime: nil,
     platforms: nil,
     stores: nil,
