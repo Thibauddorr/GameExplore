@@ -10,6 +10,7 @@ import Foundation
 let defaultGame = Game(
     slug: nil,
     name: "None name for this game yet this is only test",
+    short_screenshots: nil,
     playtime: nil,
     platforms: nil,
     stores: nil,
@@ -36,6 +37,7 @@ struct GameResponse: Decodable {
 struct Game: Decodable {
     let slug: String?
     let name: String
+    let short_screenshots: [Short_screenshots]?
     let playtime: Int?
     let platforms: [PlatformInfo]?
     let stores: [StoreInfo]?
@@ -54,6 +56,11 @@ struct Game: Decodable {
 
 struct PlatformInfo: Decodable {
     let platform: Platform?
+}
+
+struct Short_screenshots: Decodable {
+    let id: Int?
+    let image: String?
 }
 
 struct Platform: Decodable {

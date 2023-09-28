@@ -14,7 +14,7 @@ struct GameTitleView: View {
         HStack(spacing: 2) {
             //Spacer()
             VStack(alignment: .leading, spacing: 3) {
-                if let background_image = game.background_image {
+                if let background_image = game.short_screenshots?.first?.image {
                     AsyncImage(url: URL(string: background_image)) { image in
                         image
                             .resizable()

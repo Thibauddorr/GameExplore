@@ -60,6 +60,7 @@
 		BB73D5B62AB4C8DD004CE236 /* GameDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailsView.swift; sourceTree = "<group>"; };
 		BB73D5B82AB4D296004CE236 /* GameTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTitleView.swift; sourceTree = "<group>"; };
 		BB8034962AC3CD11006BED28 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
+		BBE22B332AC5D93800B9ACD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +111,7 @@
 		BB73D57E2AB1F6C9004CE236 /* GameExplore */ = {
 			isa = PBXGroup;
 			children = (
+				BBE22B332AC5D93800B9ACD7 /* Info.plist */,
 				BB73D5B52AB36131004CE236 /* Utils */,
 				BB73D5B42AB360EE004CE236 /* Views */,
 				BB73D5AF2AB355BB004CE236 /* Model */,
@@ -478,6 +480,7 @@
 				DEVELOPMENT_TEAM = 9XMPRWNUBY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GameExplore/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -507,6 +510,7 @@
 				DEVELOPMENT_TEAM = 9XMPRWNUBY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GameExplore/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
