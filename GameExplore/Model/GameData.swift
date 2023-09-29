@@ -17,7 +17,7 @@ let defaultGame = Game(
     released: nil,
     tba: nil,
     background_image: nil,
-    rating: nil,
+    rating: 4.4,
     rating_top: nil,
     ratings: nil,
     ratings_count: nil,

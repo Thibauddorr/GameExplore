@@ -18,25 +18,26 @@ struct GameTitleView: View {
                     AsyncImage(url: URL(string: background_image)) { image in
                         image
                             .resizable()
+                            .scaledToFill()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 50, height: 50)
-                            //.cornerRadius(25)
-                            .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                            .frame(width: 60, height: 40)
+                            .cornerRadius(10)
+                            
                     } placeholder: {
                         Image(systemName: "gamecontroller")
                             .resizable()
+                            .scaledToFill()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 50, height: 50)
-                            //.cornerRadius(50/2)
-                            .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                            .frame(width: 60, height: 40)
+                            .cornerRadius(10)
                     }
                 } else {
                     Image(systemName: "gamecontroller")
                         .resizable()
+                        .scaledToFill()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 50, height: 50)
-                        //.cornerRadius(25)
-                        .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                        .frame(width: 60, height: 40)
+                        .cornerRadius(10)
                 }
                 
             }
