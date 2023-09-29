@@ -22,6 +22,7 @@
 		BB73D5B72AB4C8DD004CE236 /* GameDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB73D5B62AB4C8DD004CE236 /* GameDetailsView.swift */; };
 		BB73D5B92AB4D296004CE236 /* GameTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB73D5B82AB4D296004CE236 /* GameTitleView.swift */; };
 		BB8034972AC3CD11006BED28 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8034962AC3CD11006BED28 /* RemoteImage.swift */; };
+		BBE22B352AC75D9000B9ACD7 /* StarRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE22B342AC75D9000B9ACD7 /* StarRating.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		BB73D5B82AB4D296004CE236 /* GameTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTitleView.swift; sourceTree = "<group>"; };
 		BB8034962AC3CD11006BED28 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
 		BBE22B332AC5D93800B9ACD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		BBE22B342AC75D9000B9ACD7 /* StarRating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRating.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 			children = (
 				BB73D5B02AB355F0004CE236 /* NetworkManager.swift */,
 				BB8034962AC3CD11006BED28 /* RemoteImage.swift */,
+				BBE22B342AC75D9000B9ACD7 /* StarRating.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				BB73D5822AB1F6C9004CE236 /* GameExploreTabView.swift in Sources */,
 				BB73D5B32AB35640004CE236 /* GameData.swift in Sources */,
 				BB73D5AE2AB34E93004CE236 /* LibraryView.swift in Sources */,
+				BBE22B352AC75D9000B9ACD7 /* StarRating.swift in Sources */,
 				BB73D5802AB1F6C9004CE236 /* GameExploreApp.swift in Sources */,
 				BB73D5B92AB4D296004CE236 /* GameTitleView.swift in Sources */,
 			);

@@ -15,26 +15,31 @@ struct GameDetailsView: View {
         
         
         ScrollView {
-
-            VStack(alignment: .leading){
-                HStack(alignment: .top){
+            VStack(alignment: .center) {
+                HStack(alignment: .top) {
                     Text(gameData.name)
                         .font(.title)
                         .padding()
                 }
-                            
-                HStack{
-                    Text("Rate:")
-                        .font(.body)
-                        .padding()
+                HStack(alignment: .top) { // Align the content at the top
                     if let rate = gameData.rating {
-                        Text(String(rate))
-                            .font(.body)
+                        StarRating(rating: .constant(rate), maxRating: 5)
+                            .font(.title2)
                             .padding()
                     }
+                    Spacer() // Pushes the rating to the left
+                    
+                    Button {
+                        //isShowingSafariView = true
+                        // TODO: Add game into library
+                    } label: {
+                        Label("", systemImage: "plus.circle")
+                    }
+                    .controlSize(.large)
+                    .padding()
                 }
-                Spacer()
             }
+
             
             VStack(){
                 VStack(alignment: .leading, spacing: 20) {
@@ -49,13 +54,13 @@ struct GameDetailsView: View {
                                         .resizable()
                                         .scaledToFill()
                                         .aspectRatio(contentMode: .fit)
-                                        .frame(width: 120, height: 80)
+                                        .frame(width: 100, height: 65)
                                         .cornerRadius(15)
                                 } placeholder: {
                                     Image(systemName: "gamecontroller")
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
-                                        .frame(width: 120, height: 80)
+                                        .frame(width: 100, height: 65)
                                         .cornerRadius(15)
                                 }
                             }
